@@ -44,7 +44,7 @@ function DataSourceCard(props) {
             )}
           </Typography>
           <Divider />
-          <Typography variant="body2" color="text.secondary">
+          <Typography component="span" variant="body2" color="text.secondary">
             <List>
               <ListItem disableGutters>
                 <ListItemIcon sx={{ minWidth: '35px' }}>

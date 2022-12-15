@@ -43,7 +43,7 @@ function TableCard(props) {
       className="table-card"
     >
       <CardContent color="error">
-        <Typography variant="body2" color="text.tertiary">
+        <Typography component="span" variant="body2" color="text.tertiary">
           <List>
             <ListItem disableGutters>
               <ListItemIcon sx={{ minWidth: '35px' }}>
@@ -84,17 +84,17 @@ TableCard.propTypes = {
   id: PropTypes.string.isRequired,
   tableId: PropTypes.string.isRequired,
   value: PropTypes.shape({
-    unique_refresh_id: PropTypes.string.isRequired,
+    unique_refresh_id: PropTypes.string,
     table: PropTypes.shape({
-      schema: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-    refresh_state: PropTypes.string.isRequired,
-    updated_at: PropTypes.string.isRequired,
-    dag_id: PropTypes.string.isRequired,
-    task_id: PropTypes.string.isRequired,
-    run_id: PropTypes.string.isRequired,
-    run_url: PropTypes.string.isRequired,
+      schema: PropTypes.string,
+      name: PropTypes.string,
+    }),
+    refresh_state: PropTypes.string,
+    updated_at: PropTypes.string,
+    dag_id: PropTypes.string,
+    task_id: PropTypes.string,
+    run_id: PropTypes.string,
+    run_url: PropTypes.string,
   }),
 };
 

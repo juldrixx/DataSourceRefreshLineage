@@ -29,7 +29,7 @@ function RefreshCard(props) {
       className="refresh-card"
     >
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography component="span" variant="body2" color="text.secondary">
           <List>
             <ListItem disableGutters>
               <ListItemIcon sx={{ minWidth: '35px' }}>

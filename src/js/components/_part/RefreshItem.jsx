@@ -113,19 +113,21 @@ RefreshItem.propTypes = {
     refresh_state: PropTypes.string.isRequired,
     refresh_trigger_id: PropTypes.string.isRequired,
     run_url: PropTypes.string.isRequired,
-    tables: PropTypes.objectOf({
-      unique_refresh_id: PropTypes.string.isRequired,
-      table: PropTypes.shape({
-        schema: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-      }).isRequired,
-      refresh_state: PropTypes.string.isRequired,
-      updated_at: PropTypes.string.isRequired,
-      dag_id: PropTypes.string.isRequired,
-      task_id: PropTypes.string.isRequired,
-      run_id: PropTypes.string.isRequired,
-      run_url: PropTypes.string.isRequired,
-    }).isRequired,
+    tables: PropTypes.objectOf(
+      PropTypes.shape({
+        unique_refresh_id: PropTypes.string.isRequired,
+        table: PropTypes.shape({
+          schema: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+        }).isRequired,
+        refresh_state: PropTypes.string.isRequired,
+        updated_at: PropTypes.string.isRequired,
+        dag_id: PropTypes.string.isRequired,
+        task_id: PropTypes.string.isRequired,
+        run_id: PropTypes.string.isRequired,
+        run_url: PropTypes.string.isRequired,
+      }).isRequired
+    ).isRequired,
   }).isRequired,
   tables: PropTypes.arrayOf(PropTypes.string),
 };
