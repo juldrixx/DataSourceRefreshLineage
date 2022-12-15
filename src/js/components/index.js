@@ -6,6 +6,7 @@ import DataSourceCard from './_part/DataSourceCard';
 import RefreshList from './_part/RefreshList';
 import RefreshItem from './_part/RefreshItem';
 import RefreshCard from './_part/RefreshCard';
+import TableCard from './_part/TableCard';
 
 export {
   ThemeChanger,
@@ -16,4 +17,5 @@ export {
   RefreshList,
   RefreshItem,
   RefreshCard,
+  TableCard,
 };

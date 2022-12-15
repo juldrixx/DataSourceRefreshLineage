@@ -21,6 +21,7 @@ export default (dark) =>
         secondary: dark
           ? darkVariables.secondaryColor
           : lightVariables.secondaryColor,
+        tertiary: colorVariables.white,
       },
       background: {
         default: dark
@@ -51,15 +52,15 @@ export default (dark) =>
           },
         },
       },
-      MuiListItemIcon: {
-        styleOverrides: {
-          root: {
-            color: dark
-              ? darkVariables.tertiaryColor
-              : lightVariables.tertiaryColor,
-          },
-        },
-      },
+      // MuiListItemIcon: {
+      //   styleOverrides: {
+      //     root: {
+      //       color: dark
+      //         ? darkVariables.tertiaryColor
+      //         : lightVariables.tertiaryColor,
+      //     },
+      //   },
+      // },
     },
   });
 

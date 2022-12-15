@@ -23,7 +23,11 @@ function RefreshCard(props) {
   const { value } = props;
 
   return (
-    <Card sx={{ minWidth: '300px' }} className="refresh-card">
+    <Card
+      sx={{ minWidth: '300px' }}
+      id={`refresh-${value.id}`}
+      className="refresh-card"
+    >
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           <List>
