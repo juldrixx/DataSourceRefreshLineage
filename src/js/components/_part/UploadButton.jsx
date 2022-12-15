@@ -34,7 +34,7 @@ function UploadButton(props) {
 
         if (!v.validate(json, Schema).valid) setShowError(true);
         else {
-          onUpload(json);
+          setTimeout(() => onUpload(json), 500);
           setShowSuccess(true);
         }
       } catch {
