@@ -1,6 +1,8 @@
 # Dockerfile
 
-FROM node:19.1.0 as build
+FROM node:19.3.0 as build
+
+LABEL maintainer="juldrixx@gmail.com"
 
 WORKDIR /usr/src/app
 
@@ -10,7 +12,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-FROM nginx:1.21.6
+FROM nginx:1.23.3
 WORKDIR /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /usr/src/app/dist .
