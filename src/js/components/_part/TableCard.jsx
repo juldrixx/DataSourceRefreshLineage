@@ -42,7 +42,7 @@ function TableCard(props) {
       id={`table-${id}-${tableId}`}
       className="table-card"
     >
-      <CardContent color="error">
+      <CardContent>
         <Typography component="span" variant="body2" color="text.tertiary">
           <List>
             <ListItem disableGutters>
