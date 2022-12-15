@@ -24,6 +24,7 @@ function HomePage() {
         {selectedLineage !== null && (
           <RefreshList
             options={value.lineages[selectedLineage].refreshes_history}
+            tables={value.lineages[selectedLineage].data_source.tables}
           />
         )}
       </>

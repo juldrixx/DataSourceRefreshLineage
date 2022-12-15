@@ -56,7 +56,9 @@ function TableCard(props) {
                 <Alarm />
               </ListItemIcon>
               <ListItemText>
-                {new Date(value.updated_at).toLocaleString()}
+                {value.updated_at
+                  ? new Date(value.updated_at).toLocaleString()
+                  : 'No date'}
               </ListItemText>
             </ListItem>
           </List>
@@ -66,7 +68,11 @@ function TableCard(props) {
         disableSpacing
         sx={{ display: 'flex', justifyContent: 'flex-end' }}
       >
-        <IconButton target="_blank" href={value.run_url}>
+        <IconButton
+          target="_blank"
+          href={value.run_url}
+          disabled={!value.run_url}
+        >
           <OpenInNew />
         </IconButton>
       </CardActions>
@@ -89,7 +95,11 @@ TableCard.propTypes = {
     task_id: PropTypes.string.isRequired,
     run_id: PropTypes.string.isRequired,
     run_url: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
+};
+
+TableCard.defaultProps = {
+  value: {},
 };
 
 export default TableCard;

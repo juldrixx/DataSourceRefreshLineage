@@ -51,20 +51,6 @@ h3 {
   margin-bottom: 30px;
 }
 
-a {
-  text-decoration: underline;
-  @include themed() {
-    color: t($secondary-color);
-  }
-
-  &:hover,
-  &:active {
-    @include themed() {
-      color: t($tertiary-color);
-    }
-  }
-}
-
 i {
   font-style: normal;
 }

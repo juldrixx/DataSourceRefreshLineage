@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import RefreshItem from './RefreshItem';
 
 function RefreshList(props) {
-  const { options } = props;
+  const { options, tables } = props;
 
   return (
     <ul className="refresh-list">
       {options.map((o) => (
         <li key={o.id}>
-          <RefreshItem value={o} />
+          <RefreshItem value={o} tables={tables} />
         </li>
       ))}
     </ul>
@@ -43,6 +43,11 @@ RefreshList.propTypes = {
       }).isRequired,
     })
   ).isRequired,
+  tables: PropTypes.arrayOf(PropTypes.string),
+};
+
+RefreshList.defaultProps = {
+  tables: [],
 };
 
 export default RefreshList;

@@ -15,10 +15,14 @@ import RefreshCard from './RefreshCard';
 import TableCard from './TableCard';
 import lightVariables from '../../../stylesheets/imports/_variable-light.scss';
 import darkVariables from '../../../stylesheets/imports/_variable-dark.scss';
+import colorVariables from '../../../stylesheets/imports/_variable.scss';
 
 function RefreshItem(props) {
   const [expand, setExpand] = React.useState(false);
-  const { dark, value } = props;
+  const { dark, value, tables } = props;
+  const unusedTables = tables.filter(
+    (t) => !Object.keys(value.tables).includes(t)
+  );
 
   return (
     <Card className="refresh-item">
@@ -57,6 +61,11 @@ function RefreshItem(props) {
                   <TableCard id={id} tableId={value.id} value={table} />
                 </li>
               ))}
+              {unusedTables.map((id) => (
+                <li key={id}>
+                  <TableCard id={id} tableId={value.id} />
+                </li>
+              ))}
             </ul>
           </div>
           <div>
@@ -66,6 +75,16 @@ function RefreshItem(props) {
                 start={`table-${id}-${value.id}`}
                 end={`refresh-${value.id}`}
                 path="grid"
+                color={dark ? colorVariables.white : colorVariables.black}
+              />
+            ))}
+            {unusedTables.map((id) => (
+              <Xarrow
+                key={id}
+                start={`table-${id}-${value.id}`}
+                end={`refresh-${value.id}`}
+                path="grid"
+                color={dark ? colorVariables.white : colorVariables.black}
               />
             ))}
           </div>
@@ -108,6 +127,11 @@ RefreshItem.propTypes = {
       run_url: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  tables: PropTypes.arrayOf(PropTypes.string),
+};
+
+RefreshItem.defaultProps = {
+  tables: [],
 };
 
 export default connect(mapStateToProps)(RefreshItem);
