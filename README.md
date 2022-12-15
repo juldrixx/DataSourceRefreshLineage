@@ -1,14 +1,16 @@
-# Template REACT REDUX WEBPACK
+# Data Source Refresh Lineage
 
 ## Description
 
-A template for a react redux webpack project with thunk and sass.
+A website to visualise the Data Source Refresh Lineage file.
 
 ## Installation
 
-Create 1 file:
+__Install packages:__
 
-- `.env`: environment variables
+```sh
+npm install
+```
 
 ## Start
 
