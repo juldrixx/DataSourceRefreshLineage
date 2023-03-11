@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM node:19.3.0 as build
+FROM node:19.7.0 as build
 
 LABEL maintainer="juldrixx@gmail.com"
 
